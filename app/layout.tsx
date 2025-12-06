@@ -12,8 +12,11 @@ export const metadata: Metadata = {
   title: "RRD Landmark LLP | Mixed-Use & Commercial Real Estate Developers",
   description:
     "Award-winning mixed-use and commercial real estate developers creating iconic landmarks that define skylines and communities.",
-    generator: 'v0.app'
+  generator: "v0.app",
 }
+
+export const dynamic = "force-dynamic"
+export const revalidate = 0
 
 export default function RootLayout({
   children,
@@ -22,6 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta httpEquiv="Pragma" content="no-cache" />
+        <meta httpEquiv="Expires" content="0" />
+      </head>
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />

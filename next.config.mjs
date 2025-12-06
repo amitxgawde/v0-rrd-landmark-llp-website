@@ -6,7 +6,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
- 
+  staticPageGenerationTimeout: 0,
+  experimental: {
+    dynamicIO: true,
+  },
 }
 
 export default nextConfig
