@@ -2,11 +2,19 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { useCallback, useState } from "react"
 import { Menu, X } from "lucide-react"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+
+  const scrollToSection = useCallback((e: React.MouseEvent, targetId: string) => {
+    const target = document.getElementById(targetId)
+    if (!target) return
+    e.preventDefault()
+    target.scrollIntoView({ behavior: "smooth", block: "start" })
+    setIsOpen(false)
+  }, [])
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
@@ -30,24 +38,28 @@ export function Header() {
           <div className="hidden md:flex items-center gap-12">
             <Link
               href="#projects"
+              onClick={(e) => scrollToSection(e, "projects")}
               className="font-serif text-base md:text-lg font-semibold tracking-tight uppercase text-black hover:text-black/80 transition-colors"
             >
               Projects
             </Link>
             <Link
               href="#about"
+              onClick={(e) => scrollToSection(e, "about")}
               className="font-serif text-base md:text-lg font-semibold tracking-tight uppercase text-black hover:text-black/80 transition-colors"
             >
               About Us
             </Link>
             <Link
               href="#services"
+              onClick={(e) => scrollToSection(e, "services")}
               className="font-serif text-base md:text-lg font-semibold tracking-tight uppercase text-black hover:text-black/80 transition-colors"
             >
               Services
             </Link>
             <Link
               href="#contact"
+              onClick={(e) => scrollToSection(e, "contact")}
               className="font-serif text-base md:text-lg font-semibold tracking-tight uppercase text-black hover:text-black/80 transition-colors"
             >
               Contact
@@ -66,29 +78,29 @@ export function Header() {
             <div className="flex flex-col gap-6">
               <Link
                 href="#projects"
+                onClick={(e) => scrollToSection(e, "projects")}
                 className="font-serif text-base md:text-lg font-semibold tracking-tight uppercase text-black hover:text-black/80 transition-colors"
-                onClick={() => setIsOpen(false)}
               >
                 Projects
               </Link>
               <Link
                 href="#about"
+                onClick={(e) => scrollToSection(e, "about")}
                 className="font-serif text-base md:text-lg font-semibold tracking-tight uppercase text-black hover:text-black/80 transition-colors"
-                onClick={() => setIsOpen(false)}
               >
                 About Us
               </Link>
               <Link
                 href="#services"
+                onClick={(e) => scrollToSection(e, "services")}
                 className="font-serif text-base md:text-lg font-semibold tracking-tight uppercase text-black hover:text-black/80 transition-colors"
-                onClick={() => setIsOpen(false)}
               >
                 Services
               </Link>
               <Link
                 href="#contact"
+                onClick={(e) => scrollToSection(e, "contact")}
                 className="font-serif text-base md:text-lg font-semibold tracking-tight uppercase text-black hover:text-black/80 transition-colors"
-                onClick={() => setIsOpen(false)}
               >
                 Contact
               </Link>
