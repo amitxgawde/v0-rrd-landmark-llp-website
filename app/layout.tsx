@@ -11,7 +11,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "RRD Landmark LLP | Residential & Commercial Real Estate Developers",
   description:
-    "Award-winning residential and commercial real estate developers creating iconic landmarks that define skylines and communities.",
+    "Residential and commercial real estate developers creating iconic landmarks that define skylines and communities.",
   generator: "v0.app",
   icons: {
     icon: "/logo.png",

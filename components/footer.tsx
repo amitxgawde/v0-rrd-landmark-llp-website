@@ -13,8 +13,8 @@ export function Footer() {
               <span className="font-serif text-3xl tracking-tight text-foreground leading-none">RRD LANDMARK</span>
             </Link>
             <p className="text-muted-foreground max-w-md leading-relaxed">
-              Creating iconic landmarks that define skylines and communities. Award-winning commercial and residential
-              real estate development.
+              Creating iconic landmarks that define skylines and communities. Residential and commercial real estate
+              development.
             </p>
           </div>
 

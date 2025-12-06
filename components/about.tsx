@@ -25,8 +25,8 @@ export function About() {
                 community-centric design, we create spaces that transcend ordinary construction.
               </p>
               <p>
-                Our portfolio spans award-winning developments that have redefined urban landscapes, from towering
-                commercial complexes to thoughtfully integrated residential communities. Each project reflects our
+                Our portfolio spans landmark developments that have redefined urban landscapes, from towering commercial
+                complexes to thoughtfully integrated residential communities. Each project reflects our
                 unwavering commitment to quality, innovation, and creating lasting value for investors and communities
                 alike.
               </p>

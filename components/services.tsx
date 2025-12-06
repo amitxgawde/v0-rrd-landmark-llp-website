@@ -6,9 +6,9 @@ import { Plus, Minus } from "lucide-react"
 const services = [
   {
     id: 1,
-    title: "Mixed-Use Development",
+    title: "Residential & Commercial Development",
     description:
-      "Creating integrated spaces that seamlessly blend residential, commercial, and retail components for vibrant, self-sustaining communities.",
+      "Designing and delivering high-quality residential and commercial spaces that balance livability, performance, and enduring value.",
   },
   {
     id: 2,
