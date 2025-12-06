@@ -8,13 +8,36 @@ import { Menu, X } from "lucide-react"
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
-  const scrollToSection = useCallback((e: React.MouseEvent, targetId: string) => {
-    const target = document.getElementById(targetId)
-    if (!target) return
-    e.preventDefault()
-    target.scrollIntoView({ behavior: "smooth", block: "start" })
-    setIsOpen(false)
+  const smoothScrollTo = useCallback((targetY: number, duration = 800) => {
+    const startY = window.scrollY || window.pageYOffset
+    const distance = targetY - startY
+    const startTime = performance.now()
+
+    const easeOutQuad = (t: number) => t * (2 - t)
+
+    const step = (currentTime: number) => {
+      const elapsed = currentTime - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      const eased = easeOutQuad(progress)
+      window.scrollTo(0, startY + distance * eased)
+      if (progress < 1) requestAnimationFrame(step)
+    }
+
+    requestAnimationFrame(step)
   }, [])
+
+  const scrollToSection = useCallback(
+    (e: React.MouseEvent, targetId: string) => {
+      const target = document.getElementById(targetId)
+      if (!target) return
+      e.preventDefault()
+      const rect = target.getBoundingClientRect()
+      const targetY = rect.top + (window.scrollY || window.pageYOffset)
+      smoothScrollTo(targetY)
+      setIsOpen(false)
+    },
+    [smoothScrollTo]
+  )
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
