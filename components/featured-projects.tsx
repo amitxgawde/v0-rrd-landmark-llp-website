@@ -6,35 +6,35 @@ import { ArrowUpRight } from "lucide-react"
 const projects = [
   {
     id: 1,
-    title: "Meridian Plaza",
-    category: "Mixed-Use Development",
-    location: "Downtown Financial District",
-    year: "2024",
-    image: "/modern-glass-skyscraper-office-building-downtown-l.jpg",
+    title: "Project Title",
+    category: "Category",
+    location: "Location",
+    year: "--",
+    image: "/placeholder.svg",
   },
   {
     id: 2,
-    title: "The Atrium",
-    category: "Commercial Complex",
-    location: "Tech Corridor",
-    year: "2023",
-    image: "/contemporary-commercial-building-atrium-interior-n.jpg",
+    title: "Project Title",
+    category: "Category",
+    location: "Location",
+    year: "--",
+    image: "/placeholder.svg",
   },
   {
     id: 3,
-    title: "Harbor Point",
-    category: "Retail & Office",
-    location: "Waterfront District",
-    year: "2023",
-    image: "/waterfront-commercial-development-sunset-modern-ar.jpg",
+    title: "Project Title",
+    category: "Category",
+    location: "Location",
+    year: "--",
+    image: "/placeholder.svg",
   },
   {
     id: 4,
-    title: "Vertex Tower",
-    category: "Premium Office Space",
-    location: "Central Business District",
-    year: "2022",
-    image: "/tall-modern-office-tower-blue-sky-minimalist-archi.jpg",
+    title: "Project Title",
+    category: "Category",
+    location: "Location",
+    year: "--",
+    image: "/placeholder.svg",
   },
 ]
 
@@ -87,9 +87,9 @@ export function FeaturedProjects() {
                   <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-2 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground tracking-wide">
-                    {project.category} — {project.location}
-                  </p>
+                  <p className="text-sm text-muted-foreground tracking-wide">{project.category}</p>
+                  <p className="text-xs text-muted-foreground/70 tracking-wide mt-1">{project.location}</p>
+                  <p className="text-xs text-muted-foreground/70 tracking-wide">{project.year}</p>
                 </div>
                 <div
                   className={`p-3 border border-border rounded-full transition-all duration-300 ${

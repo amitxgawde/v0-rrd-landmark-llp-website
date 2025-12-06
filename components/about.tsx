@@ -20,13 +20,13 @@ export function About() {
             </h2>
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                RRD Landmark LLP is a premier real estate development firm specializing in mixed-use and commercial
+                RRD Landmark LLP is a premier real estate development firm specializing in residential and commercial
                 properties. Founded on the principles of architectural excellence, sustainable innovation, and
                 community-centric design, we create spaces that transcend ordinary construction.
               </p>
               <p>
                 Our portfolio spans award-winning developments that have redefined urban landscapes, from towering
-                commercial complexes to thoughtfully integrated mixed-use communities. Each project reflects our
+                commercial complexes to thoughtfully integrated residential communities. Each project reflects our
                 unwavering commitment to quality, innovation, and creating lasting value for investors and communities
                 alike.
               </p>
@@ -39,8 +39,8 @@ export function About() {
 
             {/* Signature */}
             <div className="mt-12 pt-8 border-t border-border">
-              <p className="font-serif text-xl text-foreground">Rajan R. Desai</p>
-              <p className="text-sm text-muted-foreground mt-1">Managing Partner, RRD Landmark LLP</p>
+              <p className="font-serif text-xl text-foreground">[Name Placeholder]</p>
+              <p className="text-sm text-muted-foreground mt-1">[Title Placeholder]</p>
             </div>
           </div>
         </div>

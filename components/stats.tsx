@@ -1,8 +1,8 @@
 const stats = [
-  { value: "2.5M+", label: "Sq. Ft. Developed" },
-  { value: "47", label: "Projects Completed" },
-  { value: "$1.2B", label: "Portfolio Value" },
-  { value: "15+", label: "Years of Excellence" },
+  { value: "--", label: "Sq. Ft. Developed" },
+  { value: "--", label: "Projects Completed" },
+  { value: "--", label: "Portfolio Value" },
+  { value: "--", label: "Years of Excellence" },
 ]
 
 export function Stats() {

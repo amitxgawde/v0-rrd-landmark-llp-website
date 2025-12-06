@@ -3,25 +3,7 @@ import Link from "next/link"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen bg-primary flex flex-col">
-      {/* Top Navigation Links */}
-      <div className="pt-28 px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl flex justify-center gap-16">
-          <Link
-            href="#projects"
-            className="text-sm tracking-widest text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-          >
-            (PROJECTS)
-          </Link>
-          <Link
-            href="#about"
-            className="text-sm tracking-widest text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-          >
-            (PRACTICE)
-          </Link>
-        </div>
-      </div>
-
+    <section className="relative min-h-screen bg-primary flex flex-col pt-28">
       {/* Main Title */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 lg:px-8">
         <h1 className="font-serif text-6xl sm:text-8xl md:text-9xl lg:text-[12rem] text-primary-foreground tracking-tight text-center leading-none">
@@ -47,11 +29,10 @@ export function Hero() {
       <div className="px-6 lg:px-8 pb-16">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-primary-foreground/90 text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
-            <span className="tracking-widest uppercase">SKYLINE TOWER</span> is a sophisticated expression of
-            contemporary commercial architecture by RRD Landmark LLP. The mixed-use development harmonizes retail,
-            office, and residential spaces, with five floors of premium office suites enjoying panoramic city views. The
-            intentionally sculpted façade balances privacy with openness, inviting light and shadow play to create depth
-            and intrigue.{" "}
+            <span className="tracking-widest uppercase">OUR VISION</span> is to craft enduring residential and commercial
+            destinations that balance design excellence, sustainability, and community. Every development we lead is an
+            opportunity to blend purpose with beauty, creating spaces that invite light, foster connection, and stand the
+            test of time.{" "}
             <Link
               href="#projects"
               className="underline underline-offset-4 hover:text-primary-foreground transition-colors"

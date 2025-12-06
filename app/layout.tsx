@@ -9,10 +9,15 @@ const _playfair = Playfair_Display({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "RRD Landmark LLP | Mixed-Use & Commercial Real Estate Developers",
+  title: "RRD Landmark LLP | Residential & Commercial Real Estate Developers",
   description:
-    "Award-winning mixed-use and commercial real estate developers creating iconic landmarks that define skylines and communities.",
+    "Award-winning residential and commercial real estate developers creating iconic landmarks that define skylines and communities.",
   generator: "v0.app",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 }
 
 export const dynamic = "force-dynamic"

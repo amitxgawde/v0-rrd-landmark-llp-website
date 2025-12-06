@@ -10,15 +10,30 @@ export function Contact() {
     firstName: "",
     lastName: "",
     email: "",
-    organization: "",
-    role: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log(formData)
+    setStatus("idle")
+    setIsSubmitting(true)
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+      if (!res.ok) throw new Error("Failed to submit")
+      setStatus("success")
+      setFormData({ firstName: "", lastName: "", email: "", message: "" })
+    } catch (err) {
+      console.error(err)
+      setStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -33,7 +48,7 @@ export function Contact() {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-12 max-w-md">
               Are you an investor seeking premium real estate opportunities, a business looking for the perfect
-              commercial space, or a partner inspired by what we're building? Let's connect.
+              commercial or residential space, or a partner inspired by what we're building? Let's connect.
             </p>
 
             <Button
@@ -91,29 +106,6 @@ export function Contact() {
                 />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
-                    Organization
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.organization}
-                    onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                    className="w-full bg-transparent border-b border-border pb-2 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">Role</label>
-                  <input
-                    type="text"
-                    value={formData.role}
-                    onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                    className="w-full bg-transparent border-b border-border pb-2 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                  />
-                </div>
-              </div>
-
               <div>
                 <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">Message</label>
                 <textarea
@@ -126,10 +118,17 @@ export function Contact() {
 
               <Button
                 type="submit"
-                className="bg-foreground text-background hover:bg-primary hover:text-primary-foreground transition-all px-8"
+                disabled={isSubmitting}
+                className="bg-foreground text-background hover:bg-primary hover:text-primary-foreground transition-all px-8 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Submit
+                {isSubmitting ? "Submitting..." : "Submit"}
               </Button>
+              {status === "success" && (
+                <p className="text-sm text-green-600">Thanks—your message was sent.</p>
+              )}
+              {status === "error" && (
+                <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
+              )}
             </form>
           </div>
         </div>
